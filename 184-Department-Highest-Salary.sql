@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+select o as department,p as employee,salary from (select d.name as o ,e.name as p,salary,rank()over(partition by d.name order by salary desc) l from employee e inner join department d on e.departmentid=d.id ) k where k.l =1
