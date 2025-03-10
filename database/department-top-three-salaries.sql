@@ -1,2 +1,0 @@
-# Write your MySQL query statement below
-select Department, Employee, Salary from (select d.name as Department, e.name as Employee, salary, dense_rank()over(partition by departmentId order by salary desc ) as l from employee e inner join department d on d.id=e.departmentid ) k where k.l<4 ; 
